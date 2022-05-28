@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 
 def create_app():
-    @app.rout('/')
+    @app.route('/')
     def health():
         return 'That Was The Best Acting I’ve Ever Seen In My Whole Life.'
 
-    @app.rout('/RequestHandler/', methods=['POST', 'GEt'])
+    @app.route('/RequestHandler/', methods=['POST', 'GEt'])
     def request_handler(content=None):
         if request.method == 'GET':
             return 'Nah, It Was Dumber Than That.'
@@ -26,3 +26,5 @@ def create_app():
                 print("*** ERROR ***")
                 print(traceback.format_exc())
                 return "Fair Enough."
+
+    return app
