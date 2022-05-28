@@ -26,4 +26,3 @@ def manager(question=None):
 
     answer = '. '.join(answer)
     return answer
-
