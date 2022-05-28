@@ -1,0 +1,10 @@
+sentencepiece
+transformers
+mwxml
+spacy==3.3.0
+transformers==4.6.1
+wikipedia
+torch==1.11.0
+pt-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/pt_core_news_lg-3.3.0/pt_core_news_lg-3.3.0-py3-none-any.whl
+flask
+
