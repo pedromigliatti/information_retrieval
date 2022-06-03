@@ -1,5 +1,4 @@
-FROM python:3.7-stretch
-
+FROM ppc64le/python
 LABEL "maintaner"="Pedro Henrique Migliatti"
 
 RUN python -m pip install --upgrade pip
