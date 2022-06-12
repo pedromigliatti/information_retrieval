@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: psi5120-deploy
+spec:
+ replicas: 9
+ selector:
+  matchLabels:
+   app: psi5120
+ template:
+  metadata:
+   labels:
+    app: psi5120
+  spec:
+   containers:
+   - name: psi5120-container
+     image: psi5120-image
+     imagePullPolicy: Never
+     ports:
+     - containerPort: 5050
+   restartPolicy: Always
