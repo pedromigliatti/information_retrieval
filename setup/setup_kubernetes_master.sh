@@ -18,7 +18,7 @@ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 sudo apt install -y kubeadm kubelet kubectl kubernetes-cni
 
 #Assegurando que o modulo br_netfilter esteja carregado
-lsmod | grep br_netfilter >> br_netfilter
+lsmod | grep br_netfilter >> $HOME/br_netfilter
 
 #Configurado o net.bridge.bridge-nf-call-iptables do sysctl esteja marcada como 1
 cat << EOF | sudo tee /etc/modules-load.d/k8s.conf
