@@ -14,7 +14,7 @@ spec:
   spec:
    containers:
    - name: psi5120-container
-     image: psi5120-image
+     image: psi5120
      imagePullPolicy: Never
      ports:
      - containerPort: 5050
