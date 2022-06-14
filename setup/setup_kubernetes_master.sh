@@ -42,6 +42,8 @@ sudo sed -i 's/^\/swap.img/#\/swap.img/' /etc/fstab
 #cp /etc/systemd/system/kubelet.service.d/10-kubeadm.conf  /etc/systemd/system/kubelet.service.d/10-kubeadm.bkp
 #sed -i 's/--cgroup-driver=systemd/--cgroup-driver=systemd --cgroup-driver=cgroups/'  /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
+sudo kubeadm reset
+
 #Iniciando o Cluster
 sudo kubeadm init --pod-network-cidr=172.23.0.0/16
 

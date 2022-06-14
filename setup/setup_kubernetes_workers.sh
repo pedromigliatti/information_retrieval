@@ -39,4 +39,6 @@ sudo sed -i 's/^\/swap.img/#\/swap.img/' /etc/fstab
 #Escolhendo um Hostname unico para Server Node
 # sudo hostnamectl set-hostname $1
 
+sudo kubeadm reset
+
 exit 0
