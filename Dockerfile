@@ -23,6 +23,8 @@ ADD . /information_retrieval/
 WORKDIR	/information_retrieval/
 
 RUN pip install -r /information_retrieval/requirements.txt --user
+RUN pip uninstall numpy -y
+RUN pip install numpy --user
 
 EXPOSE 5050
 
