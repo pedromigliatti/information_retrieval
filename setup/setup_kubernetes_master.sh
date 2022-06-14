@@ -52,4 +52,4 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # TODO: output to file? fetch only kubeadm command
-kubectl apply -f https://raw.githubusercontent.com/antrea-io/antrea/main/build/yamls/antrea.yml
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
