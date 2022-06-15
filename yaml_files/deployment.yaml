@@ -15,7 +15,7 @@ spec:
    containers:
    - name: psi5120-container
      image: pmigliatti/psi5120
-     imagePullPolicy: IfNotPresent
+     imagePullPolicy: Always
      ports:
      - containerPort: 5050
    restartPolicy: Always
