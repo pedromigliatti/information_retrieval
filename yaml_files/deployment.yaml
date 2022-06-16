@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: psi5120-deploy
 spec:
- replicas: 9
+ replicas: 2
  selector:
   matchLabels:
    app: psi5120
