@@ -42,14 +42,18 @@ sudo sed -i 's/^\/swap.img/#\/swap.img/' /etc/fstab
 #cp /etc/systemd/system/kubelet.service.d/10-kubeadm.conf  /etc/systemd/system/kubelet.service.d/10-kubeadm.bkp
 #sed -i 's/--cgroup-driver=systemd/--cgroup-driver=systemd --cgroup-driver=cgroups/'  /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
-sudo kubeadm reset
+yes | sudo kubeadm reset
 
 #Iniciando o Cluster
 sudo kubeadm init --pod-network-cidr=172.23.0.0/16
 
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # TODO: output to file? fetch only kubeadm command
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+# https://stackoverflow.com/questions/57739870/how-to-enable-kube-system-metrics-server-from-status-false-missingendpoints
+# kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl apply -f ../yaml_files/components.yaml
