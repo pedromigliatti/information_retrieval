@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: psi5120-deploy
 spec:
- replicas: 2
+ replicas: 9
  selector:
   matchLabels:
    app: psi5120
@@ -15,6 +15,15 @@ spec:
    containers:
    - name: psi5120-container
      image: pmigliatti/psi5120
+     resources:
+       requests:
+         memory: "5Gi"
+       limits:
+         memory: "10Gi"
+# --vm 2 ... start two virtual worker threads
+# --vm-bytes ... allocate 8GB of RAM
+# --vm-hang ... randomly waits 2 seconds and re-allocate around 8 GB of ram
+     args: ["--vm", "2", "--vm-bytes", "8G", "--vm-hang", "5"]
      imagePullPolicy: Always
      ports:
      - containerPort: 5050
